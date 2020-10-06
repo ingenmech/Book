@@ -1,0 +1,7 @@
+<1><Garry Potter><Joanne Rowling><Publisher>
+<2><Food Book><James Oliver><N/A>
+<3><Garry Potter part2><Joanne Rowling><N/A>
+<4><Simon Cat><N/A><Publisher>
+<5><Fitnes><Super Trener><AAA Publisher>
+<6><Think in Java><Bruce Eckel><Publ>
+<7><Method JAVA><Blinov, Romanchik><N/A>

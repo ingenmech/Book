@@ -1,0 +1,11 @@
+2020-10-06 23:48:33 INFO  Main:26 - started
+2020-10-06 23:48:33 ERROR Main:19 - Data format is not correct<1><Garry Potter><Joanne Rowling><Publisher>
+by.epam.evm.book.data.DataException: Data format is not correct<1><Garry Potter><Joanne Rowling><Publisher>
+	at by.epam.evm.book.data.BookParser.parse(BookParser.java:26)
+	at by.epam.evm.book.data.FileDataAcquirer.acquireBook(FileDataAcquirer.java:32)
+	at by.epam.evm.book.Main.run(Main.java:28)
+	at by.epam.evm.book.Main.main(Main.java:17)
+2020-10-06 23:50:35 INFO  Main:26 - started
+2020-10-06 23:50:36 INFO  ConsolePrinter:13 - Book{id=1, title='Garry Potter', author='Joanne Rowling', publisher='Publisher'}
+2020-10-06 23:50:36 INFO  ConsolePrinter:13 - Book{id=3, title='Garry Potter part2', author='Joanne Rowling', publisher='N/A'}
+2020-10-06 23:50:36 INFO  ConsolePrinter:13 - Book{id=3, title='Garry Potter part2', author='Joanne Rowling', publisher='N/A'}
