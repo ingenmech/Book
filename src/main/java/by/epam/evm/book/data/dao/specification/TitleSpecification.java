@@ -1,18 +1,19 @@
-package by.epam.evm.book.data.specification;
+package by.epam.evm.book.data.dao.specification;
 
 import by.epam.evm.book.model.Book;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class IdSpecification implements Specification{
+public class TitleSpecification  implements Specification{
     @Override
     public <T> List<Book> find(List<Book> books, T value) {
         List<Book> foundBooks = new ArrayList<>();
-        Integer id;
+        String title;
+        String searchValue = String.valueOf(value);
         for (Book book : books) {
-            id = book.getId();
-            if (id.equals(value)) {
+            title = book.getTitle();
+            if (title.equalsIgnoreCase(searchValue)) {
                 foundBooks.add(book);
             }
         }

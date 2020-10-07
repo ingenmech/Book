@@ -1,4 +1,4 @@
-package by.epam.evm.book.data;
+package by.epam.evm.book.data.dao;
 
 public enum Field {
     ID,

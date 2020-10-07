@@ -19,21 +19,17 @@ public class FileDataAcquirer implements DataAcquirer{
     }
 
     @Override
-    public List<Book> acquireBook() throws DataException {
+    public List<String> acquireBook() throws DataException {
         BufferedReader reader = null;
 
         try {
             reader = new BufferedReader(new FileReader(fileName));
-            List<Book> books = new ArrayList<>();
-            Book book;
-            BookParser parser = new BookParser();
+            List<String> data = new ArrayList<>();
             String line;
             while ((line = reader.readLine()) != null) {
-                book = parser.parse(line);
-                books.add(book);
+                data.add(line);
             }
-            return books;
-
+            return data;
         } catch (IOException e) {
             throw new DataException(e.getMessage(), e);
         } finally {

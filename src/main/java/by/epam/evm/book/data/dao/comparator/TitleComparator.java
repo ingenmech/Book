@@ -1,4 +1,4 @@
-package by.epam.evm.book.data.comparator;
+package by.epam.evm.book.data.dao.comparator;
 
 import by.epam.evm.book.model.Book;
 

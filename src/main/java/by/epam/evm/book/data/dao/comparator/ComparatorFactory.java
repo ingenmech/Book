@@ -1,14 +1,14 @@
-package by.epam.evm.book.data.comparator;
+package by.epam.evm.book.data.dao.comparator;
 
-import by.epam.evm.book.data.Field;
-import by.epam.evm.book.data.NotContainedFieldException;
+import by.epam.evm.book.data.DataException;
+import by.epam.evm.book.data.dao.Field;
 import by.epam.evm.book.model.Book;
 
 import java.util.Comparator;
 
 public class ComparatorFactory {
 
-    public Comparator<Book> create(Field field) throws NotContainedFieldException {
+    public Comparator<Book> create(Field field) throws DataException {
         Comparator<Book> comparator;
         switch (field) {
             case TITLE:
@@ -24,8 +24,7 @@ public class ComparatorFactory {
                 comparator = new IdComparator();
                 break;
             default:
-                throw new NotContainedFieldException("Field not exist in the listing" + " = " + field);
-
+                throw new DataException("Field not exist in the listing" + " = " + field);
         }
         return comparator;
     }

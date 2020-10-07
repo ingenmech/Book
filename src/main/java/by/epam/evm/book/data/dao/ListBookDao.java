@@ -1,8 +1,9 @@
-package by.epam.evm.book.data;
+package by.epam.evm.book.data.dao;
 
-import by.epam.evm.book.data.comparator.ComparatorFactory;
-import by.epam.evm.book.data.specification.Specification;
-import by.epam.evm.book.data.specification.SpecificationFactory;
+import by.epam.evm.book.data.DataException;
+import by.epam.evm.book.data.dao.comparator.ComparatorFactory;
+import by.epam.evm.book.data.dao.specification.Specification;
+import by.epam.evm.book.data.dao.specification.SpecificationFactory;
 import by.epam.evm.book.model.Book;
 
 import java.util.ArrayList;
@@ -49,14 +50,14 @@ public class ListBookDao implements BookDao {
     }
 
     @Override
-    public <T> List<Book> findByTag(Field field, T value) throws NotContainedFieldException {
+    public <T> List<Book> findByTag(Field field, T value) throws DataException {
         SpecificationFactory factory = new SpecificationFactory();
         Specification specification = factory.create(field);
         return specification.find(books, value);
     }
 
     @Override
-    public List<Book> sortBooksByTag(Field field) throws NotContainedFieldException {
+    public List<Book> sortBooksByTag(Field field) throws DataException {
         ComparatorFactory factory = new ComparatorFactory();
         Comparator<Book> comparator = factory.create(field);
         List<Book> sortedList = new ArrayList<>(books);

@@ -1,11 +1,11 @@
-package by.epam.evm.book.data.specification;
+package by.epam.evm.book.data.dao.specification;
 
-import by.epam.evm.book.data.Field;
-import by.epam.evm.book.data.NotContainedFieldException;
+import by.epam.evm.book.data.DataException;
+import by.epam.evm.book.data.dao.Field;
 
 public class SpecificationFactory {
 
-    public Specification create(Field field) throws NotContainedFieldException {
+    public Specification create(Field field) throws DataException {
         Specification specification = null;
 
         switch (field) {
@@ -22,7 +22,7 @@ public class SpecificationFactory {
                 specification = new IdSpecification();
                 break;
             default:
-                throw new NotContainedFieldException("Field not exist in the listing" + " = " + field);
+                throw new DataException("Field not exist in the listing" + " = " + field);
         }
         return specification;
     }

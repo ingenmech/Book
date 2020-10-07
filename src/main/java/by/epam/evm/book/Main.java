@@ -1,6 +1,9 @@
 package by.epam.evm.book;
 
 import by.epam.evm.book.data.*;
+import by.epam.evm.book.data.dao.BookDao;
+import by.epam.evm.book.data.dao.Field;
+import by.epam.evm.book.data.dao.ListBookDao;
 import by.epam.evm.book.model.Book;
 import by.epam.evm.book.view.ConsolePrinter;
 import org.apache.log4j.Logger;
@@ -17,15 +20,15 @@ public class Main {
             run();
         } catch (DataException e) {
             LOGGER.error(e.getMessage(), e);
-        } catch (NotContainedFieldException e) {
-            LOGGER.error(e.getMessage(), e);
         }
     }
 
-    private static void run() throws DataException, NotContainedFieldException {
+    private static void run() throws DataException{
         LOGGER.info("started");
         FileDataAcquirer dataAcquirer = new FileDataAcquirer("input.txt");
-        List<Book> books = dataAcquirer.acquireBook();
+        List<String> dataBooks = dataAcquirer.acquireBook();
+        BooksCreator booksCreator = new BooksCreator();
+        List<Book> books = booksCreator.create(dataBooks);
 
         BookDao dao = new ListBookDao(books);
         List<Book> authorBooks = dao.findByTag(Field.AUTHOR, "Joanne Rowling");

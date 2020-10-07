@@ -1,4 +1,4 @@
-package by.epam.evm.book.data.specification;
+package by.epam.evm.book.data.dao.specification;
 
 import by.epam.evm.book.model.Book;
 import org.junit.Assert;
