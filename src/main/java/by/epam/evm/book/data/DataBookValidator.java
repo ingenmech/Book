@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class DataBookValidator {
 
-    public boolean validate(String bookPatter, String dataBook){
+    public boolean isCarrentData(String bookPatter, String dataBook){
         Pattern pattern = Pattern.compile(bookPatter);
         Matcher matcher = pattern.matcher(dataBook);
         return matcher.matches();

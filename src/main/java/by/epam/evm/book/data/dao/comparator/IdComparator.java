@@ -10,9 +10,10 @@ public class IdComparator implements Comparator<Book> {
         int firstId = firstBook.getId();
         int secondId = secondBook.getId();
         int result = 0;
+
         if (firstId > secondId) {
             result = 1;
-        } else if (firstId > secondId) {
+        } else if (firstId < secondId) {
             result = -1;
         }
         return result;

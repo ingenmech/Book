@@ -1,6 +1,5 @@
 package by.epam.evm.book.data;
 
-import by.epam.evm.book.model.Book;
 import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;

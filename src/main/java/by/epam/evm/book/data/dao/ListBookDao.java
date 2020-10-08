@@ -12,15 +12,22 @@ import java.util.List;
 
 public class ListBookDao implements BookDao {
 
-    private List<Book> books;
+    private final static ComparatorFactory COMPARATOR_FACTORY = new ComparatorFactory();
+    private final static SpecificationFactory SPECIFICATION_FACTORY = new SpecificationFactory();
+    private final List<Book> books;
 
     public ListBookDao(List<Book> books) {
         this.books = books;
     }
 
     @Override
+    public int size() {
+        return books.size();
+    }
+
+    @Override
     public void addBook(Book book) throws DataException {
-        if (!isContained(book)) {
+        if (books.contains(book)) {
             throw new DataException("This book " + book.getTitle() + " was not found in the list");
         }
         books.add(book);
@@ -28,40 +35,23 @@ public class ListBookDao implements BookDao {
 
     @Override
     public void removeBook(Book book) throws DataException {
-        if (!isContained(book)){
+        if (!books.contains(book)) {
             throw new DataException("This book " + book.getTitle() + " was not found in the list");
         }
         books.remove(book);
     }
 
-    private boolean isContained(Book book) {
-        int i = 0;
-        boolean isContained = false;
-        Book extractedBook;
-        while (i < books.size()) {
-            extractedBook = books.get(i);
-            if (extractedBook.equals(book)) {
-                isContained = true;
-                break;
-            }
-            i++;
-        }
-        return isContained;
-    }
-
     @Override
     public <T> List<Book> findByTag(Field field, T value) throws DataException {
-        SpecificationFactory factory = new SpecificationFactory();
-        Specification specification = factory.create(field);
+        Specification specification = SPECIFICATION_FACTORY.create(field);
         return specification.find(books, value);
     }
 
     @Override
     public List<Book> sortBooksByTag(Field field) throws DataException {
-        ComparatorFactory factory = new ComparatorFactory();
-        Comparator<Book> comparator = factory.create(field);
-        List<Book> sortedList = new ArrayList<>(books);
-        sortedList.sort(comparator);
-        return sortedList;
+        Comparator<Book> comparator = COMPARATOR_FACTORY.create(field);
+        List<Book> sorted = new ArrayList<>(books);
+        sorted.sort(comparator);
+        return sorted;
     }
 }
