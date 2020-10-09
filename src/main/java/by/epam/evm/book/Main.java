@@ -25,14 +25,14 @@ public class Main {
 
     private static void run() throws DataException {
         LOGGER.info("started");
-        FileDataAcquirer dataAcquirer = new FileDataAcquirer("input.txt");
+        DataAcquirer dataAcquirer = new FileDataAcquirer("input.txt");
         List<String> dataBooks = dataAcquirer.acquireBook();
         BooksCreator booksCreator = new BooksCreator();
         List<Book> books = booksCreator.create(dataBooks);
 
-        ListPrinter printer = new ListPrinter();
         BookDao dao = new ListBookDao(books);
         List<Book> foundBooks = dao.findByTag(Field.ID, 3);
+        ListPrinter printer = new ListPrinter();
         String printBook = printer.print(foundBooks);
         LOGGER.info("Found book " + printBook);
 
