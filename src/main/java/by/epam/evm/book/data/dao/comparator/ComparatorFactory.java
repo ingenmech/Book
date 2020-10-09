@@ -10,7 +10,7 @@ public class ComparatorFactory {
 
     public Comparator<Book> create(Field field) throws DataException {
         Comparator<Book> comparator;
-        
+
         switch (field) {
             case TITLE:
                 comparator = new TitleComparator();

@@ -17,7 +17,7 @@ public class IdComparatorTest {
     }
 
     @Test
-    public void testSortShouldSortListByIdWhenDataCorrect(){
+    public void testSortShouldSortListByIdWhenDataCorrect() {
         //given
         IdComparator comparator = new IdComparator();
         List<Book> actual = new ArrayList<>();

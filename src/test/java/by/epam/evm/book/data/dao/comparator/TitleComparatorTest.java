@@ -17,7 +17,7 @@ public class TitleComparatorTest {
     }
 
     @Test
-    public void testSortShouldSortListByTitleWhenDataCorrect(){
+    public void testSortShouldSortListByTitleWhenDataCorrect() {
         //given
         TitleComparator comparator = new TitleComparator();
         List<Book> actual = new ArrayList<>();

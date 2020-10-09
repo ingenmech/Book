@@ -18,7 +18,7 @@ public class TitleSpecificationTest {
     }
 
     @Test
-    public void testFindShouldFindBookByTitleWhenDataIsEquals() {
+    public void testFindShouldSearchBookByTitleWhenBookDoesExist() {
         //given
         TitleSpecification specification = new TitleSpecification();
         List<Book> actual = new ArrayList<>();

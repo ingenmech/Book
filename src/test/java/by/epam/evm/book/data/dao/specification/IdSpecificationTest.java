@@ -18,7 +18,7 @@ public class IdSpecificationTest {
     }
 
     @Test
-    public void testFindShouldFindBookByIdWhenDataIsCorrect() {
+    public void testFindShouldSearchBookByIdWhenBookDoesExist() {
         //given
         IdSpecification specification = new IdSpecification();
         List<Book> actual = new ArrayList<>();

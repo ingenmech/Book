@@ -14,7 +14,7 @@ public class ListBookDao implements BookDao {
 
     private final static ComparatorFactory COMPARATOR_FACTORY = new ComparatorFactory();
     private final static SpecificationFactory SPECIFICATION_FACTORY = new SpecificationFactory();
-    private final List<Book> books;
+    private final List<Book> books; // Set<Book> books = ...
 
     public ListBookDao(List<Book> books) {
         this.books = books;

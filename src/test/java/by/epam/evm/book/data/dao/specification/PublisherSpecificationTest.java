@@ -18,7 +18,7 @@ public class PublisherSpecificationTest {
     }
 
     @Test
-    public void testFindShouldFindBookByPublisherWhenDataIsEquals() {
+    public void testFindShouldSearchBookByPublisherWhenBookDoesExist() {
         //given
         PublisherSpecification specification = new PublisherSpecification();
         List<Book> actual = new ArrayList<>();

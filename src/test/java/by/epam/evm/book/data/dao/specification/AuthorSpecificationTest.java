@@ -18,7 +18,7 @@ public class AuthorSpecificationTest {
     }
 
     @Test
-    public void testFindShouldFindBookByAuthorTitleWhenDataIsEquals() {
+    public void testFindShouldSearchBookByAuthorWhenBookDoesExist() {
         //given
         AuthorSpecification specification = new AuthorSpecification();
         List<Book> actual = new ArrayList<>();

@@ -14,7 +14,7 @@ public class BooksCreator {
         Book book;
         String bookPattern = BookParser.getBookPattern();
         for (String dataBook: data){
-            if (validator.isCarrentData(bookPattern, dataBook)) {
+            if (validator.isCorrectData(bookPattern, dataBook)) {
                 book = parser.parse(dataBook);
                 books.add(book);
             }
