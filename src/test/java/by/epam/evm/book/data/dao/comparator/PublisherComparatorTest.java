@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PublisherComparatorTest {
+
     private final static List<Book> EXPECTED = new ArrayList<>();
 
     static {

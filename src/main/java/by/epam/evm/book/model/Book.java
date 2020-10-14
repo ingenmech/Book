@@ -1,6 +1,6 @@
 package by.epam.evm.book.model;
 
-public class Book {
+public final class Book {
     private final int id;
     private final String title;
     private final String author;

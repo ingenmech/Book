@@ -26,6 +26,5 @@ public class BookParserTest {
         String invalidData = "<1>.<Title1>.<Author1><Publisher1>";
         //when
         Book actual = parser.parse(invalidData);
-
     }
 }

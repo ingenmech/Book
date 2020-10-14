@@ -13,12 +13,12 @@ public class FileDataAcquirerTest {
     @Test
     public void testAcquireBookShouldReadAllStringAndReturnListWhenFileDoesExist() throws DataException {
         //given
-        FileDataAcquirer acquirer = new FileDataAcquirer(FILE_NAME);
+        FileDataReader acquirer = new FileDataReader(FILE_NAME);
         List<String> expected = new ArrayList<>();
         expected.add("<1><Title1><Author1><Publisher1>");
         expected.add("<2><Title2><Author2><Publisher2>");
         //when
-        List<String> actual = acquirer.acquireBook();
+        List<String> actual = acquirer.read();
         //then
         Assert.assertEquals(expected,actual);
     }
@@ -26,8 +26,8 @@ public class FileDataAcquirerTest {
     @Test(expected = DataException.class)//then
     public void testAcquireBookShouldThrowExceptionWhenFileDoesNotExist() throws DataException {
         //given
-        FileDataAcquirer acquirer = new FileDataAcquirer("src/test/resources/i.txt");
+        FileDataReader acquirer = new FileDataReader("src/test/resources/i.txt");
         //when
-        List<String> actual = acquirer.acquireBook();
+        List<String> actual = acquirer.read();
     }
 }

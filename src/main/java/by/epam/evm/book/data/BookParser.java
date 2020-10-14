@@ -5,16 +5,12 @@ import by.epam.evm.book.model.Book;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class BookParser {
+public class BookParser implements Parser {
     private final static String BOOK_PATTERN = "<(\\d+)><(.+)><(.+)><(.+)>";
     private final static int ID_GROUP = 1;
     private final static int TITLE_GROUP = 2;
     private final static int AUTHOR_GROUP = 3;
     private final static int PUBLISHER_GROUP = 4;
-
-    public static String getBookPattern() {
-        return BOOK_PATTERN;
-    }
 
     public Book parse(String data) throws DataException {
         Pattern pattern = Pattern.compile(BOOK_PATTERN);

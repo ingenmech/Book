@@ -58,3 +58,17 @@ Book{id=7, title='Method JAVA', author='Blinov, Romanchik', publisher='N/A'}
 2020-10-08 23:09:25 INFO  Main:44 - Size before add book = 7
 2020-10-08 23:09:25 INFO  Main:46 - Size after add book = 8
 2020-10-08 23:09:25 INFO  Main:48 - Size after remove book = 7
+2020-10-14 21:50:07 INFO  Main:27 - started
+2020-10-14 21:50:07 INFO  Main:40 - Found book Book{id=3, title='Garry Potter part2', author='Joanne Rowling', publisher='N/A'}
+
+2020-10-14 21:50:07 INFO  Main:44 - Sorted book Book{id=1, title='Garry Potter', author='Joanne Rowling', publisher='Publisher'}
+Book{id=2, title='Food Book', author='James Oliver', publisher='N/A'}
+Book{id=3, title='Garry Potter part2', author='Joanne Rowling', publisher='N/A'}
+Book{id=4, title='Simon Cat', author='N/A', publisher='Publisher'}
+Book{id=5, title='Fitnes', author='Super Trener', publisher='AAA Publisher'}
+Book{id=6, title='Think in Java', author='Bruce Eckel', publisher='Publ'}
+Book{id=7, title='Method JAVA', author='Blinov, Romanchik', publisher='N/A'}
+
+2020-10-14 21:50:07 INFO  Main:47 - Size before add book = 7
+2020-10-14 21:50:07 INFO  Main:49 - Size after add book = 8
+2020-10-14 21:50:07 INFO  Main:51 - Size after remove book = 7

@@ -25,9 +25,12 @@ public class Main {
 
     private static void run() throws DataException {
         LOGGER.info("started");
-        DataAcquirer dataAcquirer = new FileDataAcquirer("input.txt");
-        List<String> dataBooks = dataAcquirer.acquireBook();
-        BooksCreator booksCreator = new BooksCreator();
+        DataReader dataAcquirer = new FileDataReader("input.txt");
+        List<String> dataBooks = dataAcquirer.read();
+
+        BookValidator validator = new DataBookValidator();
+        Parser parser = new BookParser();
+        BooksCreator booksCreator = new BooksCreator(parser, validator);
         List<Book> books = booksCreator.create(dataBooks);
 
         BookDao dao = new ListBookDao(books);

@@ -8,17 +8,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileDataAcquirer implements DataAcquirer{
+public class FileDataReader implements DataReader {
 
-    private final static Logger LOGGER = Logger.getLogger(FileDataAcquirer.class);
+    private final static Logger LOGGER = Logger.getLogger(FileDataReader.class);
     private final String fileName;
 
-    public FileDataAcquirer(String fileName) {
+    public FileDataReader(String fileName) {
         this.fileName = fileName;
     }
 
     @Override
-    public List<String> acquireBook() throws DataException {
+    public List<String> read() throws DataException {
         BufferedReader reader = null;
 
         try {
@@ -29,6 +29,7 @@ public class FileDataAcquirer implements DataAcquirer{
                 data.add(line);
             }
             return data;
+
         } catch (IOException e) {
             throw new DataException(e.getMessage(), e);
         } finally {

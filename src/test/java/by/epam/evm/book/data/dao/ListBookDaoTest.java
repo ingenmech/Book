@@ -10,14 +10,14 @@ import java.util.List;
 
 public class ListBookDaoTest {
 
-    private final static ListBookDao dao;
+    private final static ListBookDao DAO;
 
     static {
         List<Book> books = new ArrayList<>();
         books.add(new Book(2, "Title2", "Author2", "Publisher2"));
         books.add(new Book(3, "Title3", "Author3", "Publisher3"));
         books.add(new Book(1, "Title1", "Author1", "Publisher1"));
-        dao = new ListBookDao(books);
+        DAO = new ListBookDao(books);
     }
 
     @Test
@@ -25,7 +25,7 @@ public class ListBookDaoTest {
         //given
         int expectedSize = 3;
         //when
-        int actualSize = dao.size();
+        int actualSize = DAO.size();
         //then
         Assert.assertEquals(expectedSize, actualSize);
     }
@@ -36,8 +36,8 @@ public class ListBookDaoTest {
         int expectedSize = 4;
         Book book = new Book(4, "Title4", "Author4", "Publisher4");
         //when
-        dao.addBook(book);
-        int actualSize = dao.size();
+        DAO.addBook(book);
+        int actualSize = DAO.size();
         //then
         Assert.assertEquals(expectedSize, actualSize);
     }
@@ -47,7 +47,7 @@ public class ListBookDaoTest {
         //given
         Book book = new Book(2, "Title2", "Author2", "Publisher2");
         //when
-        dao.addBook(book);
+        DAO.addBook(book);
     }
 
     @Test
@@ -55,10 +55,10 @@ public class ListBookDaoTest {
         //given
         int expectedSize = 3;
         Book book = new Book(4, "Title4", "Author4", "Publisher4");
-        dao.addBook(book);
-        dao.removeBook(book);
+        DAO.addBook(book);
+        DAO.removeBook(book);
         //when
-        int actualSize = dao.size();
+        int actualSize = DAO.size();
         //then
         Assert.assertEquals(expectedSize, actualSize);
     }
@@ -68,6 +68,6 @@ public class ListBookDaoTest {
         //given
         Book book = new Book(4, "Title4", "Author4", "Publisher4");
         //when
-        dao.removeBook(book);
+        DAO.removeBook(book);
     }
 }
