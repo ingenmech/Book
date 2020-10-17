@@ -10,3 +10,4 @@
 /uiDesigner.xml
 *.class
 *.log
+/target/
