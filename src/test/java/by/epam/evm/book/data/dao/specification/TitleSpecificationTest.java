@@ -5,16 +5,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TitleSpecificationTest {
 
-    private final static List<Book> BOOKS = new ArrayList<>();
+    private final static List<Book> BOOKS;
 
     static {
-        BOOKS.add(new Book(10, "Title1", "Author Name", "Publisher"));
-        BOOKS.add(new Book(11, "Title2", "Name Surname", "N/A"));
-        BOOKS.add(new Book(12, "Title3", "Author Name", "N/A"));
+        Book firstBook = new Book(10, "Title1", "Author Name", "Publisher");
+        Book secondBook = new Book(11, "Title2", "Name Surname", "N/A");
+        Book thirdBook = new Book(12, "Title3", "Author Name", "N/A");
+        BOOKS = Arrays.asList(firstBook, secondBook, thirdBook);
     }
 
     @Test

@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FileDataAcquirerTest {
@@ -13,10 +14,10 @@ public class FileDataAcquirerTest {
     @Test
     public void testAcquireBookShouldReadAllStringAndReturnListWhenFileDoesExist() throws DataException {
         //given
+        String firstLine = "<1><Title1><Author1><Publisher1>";
+        String secondLine = "<2><Title2><Author2><Publisher2>";
+        List<String> expected = Arrays.asList(firstLine,secondLine);
         FileDataReader acquirer = new FileDataReader(FILE_NAME);
-        List<String> expected = new ArrayList<>();
-        expected.add("<1><Title1><Author1><Publisher1>");
-        expected.add("<2><Title2><Author2><Publisher2>");
         //when
         List<String> actual = acquirer.read();
         //then
