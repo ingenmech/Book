@@ -1,7 +1,6 @@
 package by.epam.evm.book.data.dao.comparator;
 
 import by.epam.evm.book.data.dao.Field;
-import by.epam.evm.book.data.dao.InputException;
 import by.epam.evm.book.model.Book;
 
 import java.util.Comparator;
@@ -25,7 +24,7 @@ public class ComparatorFactory {
                 comparator = new IdComparator();
                 break;
             default:
-                throw new InputException("Field not exist in the listing" + " = " + field);
+                throw new IllegalArgumentException("Field not exist in the listing" + " = " + field);
         }
         return comparator;
     }
