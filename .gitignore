@@ -1,0 +1,12 @@
+/target/
+/shelf/
+/workspace.xml
+/compiler.xml
+/dictionaries
+/jarRepositories.xml
+/misc.xml
+/vcs.xml
+*.iml
+/uiDesigner.xml
+*.class
+*.log
