@@ -28,7 +28,7 @@ public class ListBookDao implements BookDao {
     @Override
     public void addBook(Book book) throws DataException {
         if (books.contains(book)) {
-            throw new DataException("This book " + book.getTitle() + " was not found in the list");
+            throw new DataException(String.format("This book %s was not found in the list", book.getTitle()));
         }
         books.add(book);
     }
@@ -36,7 +36,7 @@ public class ListBookDao implements BookDao {
     @Override
     public void removeBook(Book book) throws DataException {
         if (!books.contains(book)) {
-            throw new DataException("This book " + book.getTitle() + " was not found in the list");
+            throw new DataException(String.format("This book %s was not found in the list", book.getTitle()));
         }
         books.remove(book);
     }

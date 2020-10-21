@@ -5,18 +5,21 @@ import by.epam.evm.book.model.Book;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListBookDaoTest {
 
+    private final static Book FIRST_BOOK = new Book(2, "Title2", "Author2", "Publisher2");
+    private final static Book SECOND_BOOK = new Book(3, "Title3", "Author3", "Publisher3");
+    private final static Book THIRD_BOOK = new Book(1, "Title1", "Author1", "Publisher1");
     private final static ListBookDao DAO;
 
     static {
-        Book firstBook = new Book(2, "Title2", "Author2", "Publisher2");
-        Book secondBook = new Book(3, "Title3", "Author3", "Publisher3");
-        Book thirdBook = new Book(1, "Title1", "Author1", "Publisher1");
-        List<Book> books = Arrays.asList(firstBook, secondBook, thirdBook);
+        List<Book> books = new ArrayList<>();
+        books.add(FIRST_BOOK);
+        books.add(SECOND_BOOK);
+        books.add(THIRD_BOOK);
         DAO = new ListBookDao(books);
     }
 
@@ -53,11 +56,10 @@ public class ListBookDaoTest {
     @Test
     public void testRemoveBookShouldAddBookWhenBookIsContainInList() throws DataException {
         //given
-        int expectedSize = 3;
+        int expectedSize = 2;
         Book book = new Book(4, "Title4", "Author4", "Publisher4");
-        DAO.addBook(book);
         //when
-        DAO.removeBook(book);
+        DAO.removeBook(FIRST_BOOK);
         int actualSize = DAO.size();
         //then
         Assert.assertEquals(expectedSize, actualSize);

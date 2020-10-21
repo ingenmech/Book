@@ -9,14 +9,10 @@ import java.util.List;
 
 public class PublisherComparatorTest {
 
-    private final static List<Book> EXPECTED;
-
-    static {
-        Book firstBook = new Book(1, "Title1", "Author1", "Publisher1");
-        Book secondBook = new Book(2, "Title2", "Author2", "Publisher2");
-        Book thirdBook = new Book(3, "Title3", "Author3", "Publisher3");
-        EXPECTED = Arrays.asList(firstBook, secondBook, thirdBook);
-    }
+    private final static List<Book> EXPECTED = Arrays.asList(
+            new Book(1, "Title1", "Author1", "Publisher1"),
+            new Book(2, "Title2", "Author2", "Publisher2"),
+            new Book(3, "Title3", "Author3", "Publisher3"));
 
     @Test
     public void testSortShouldSortListByPublisherWhenDataCorrect() {

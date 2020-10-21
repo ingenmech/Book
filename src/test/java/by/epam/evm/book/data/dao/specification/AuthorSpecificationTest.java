@@ -9,14 +9,10 @@ import java.util.List;
 
 public class AuthorSpecificationTest {
 
-    private final static List<Book> BOOKS;
-
-    static {
-        Book firstBook = new Book(10, "Title1", "Author Name", "Publisher");
-        Book secondBook = new Book(11, "Title2", "Name Surname", "N/A");
-        Book thirdBook = new Book(12, "Title3", "Author Name", "N/A");
-        BOOKS = Arrays.asList(firstBook, secondBook, thirdBook);
-    }
+    private final static List<Book> BOOKS = Arrays.asList(
+            new Book(10, "Title1", "Author Name", "Publisher"),
+            new Book(11, "Title2", "Name Surname", "N/A"),
+            new Book(12, "Title3", "Author Name", "N/A"));
 
     @Test
     public void testFindShouldSearchBookByAuthorWhenBookDoesExist() {
